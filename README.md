@@ -86,7 +86,7 @@ npx expo start --tunnel
 Enlace a un Video Demo
 ###
 
-URL: https://youtu.be/ZI7u9XtZ-2o
+    URL: https://youtu.be/ZI7u9XtZ-2o
 
 **************************************************************************************************
 
@@ -126,9 +126,9 @@ iOS (producción):
 
 Notas varias:
 
-a. Para Play Store, se recomienda usar AAB (app-bundle).
-b. Para distribución rápida o testing interno, se puede generar un APK (production-apk).
-c. EAS guía de forma interactiva el firmado de Android (keystore) y las credenciales de iOS (certificados y provisioning), aunque también pueden gestionarse manualmente mediante EAS Credentials.
+    a. Para Play Store, se recomienda usar AAB (app-bundle).
+    b. Para distribución rápida o testing interno, se puede generar un APK (production-apk).
+    c. EAS guía de forma interactiva el firmado de Android (keystore) y las credenciales de iOS (certificados y provisioning), aunque también pueden gestionarse manualmente mediante EAS Credentials.
 
 **************************************************************************************************
 
@@ -143,23 +143,23 @@ a. Si la aplicación debe funcionar sin conexión a internet, implementaría una
 
 b. Razones por las cuales usar SQLite:
 
-Es una tecnología madura, estable y ampliamente soportada.
-Ideal para datos relacionales (naves, facciones, favoritos, historial).
-Soporta índices y filtrado/búsqueda eficiente a escala.
-Funciona muy bien en entornos Expo con bajo overhead.
+    Es una tecnología madura, estable y ampliamente soportada.
+    Ideal para datos relacionales (naves, facciones, favoritos, historial).
+    Soporta índices y filtrado/búsqueda eficiente a escala.
+    Funciona muy bien en entornos Expo con bajo overhead.
 
 c. Estrategia propuesta:
 
-En el primer arranque con conexión: consumir /spaceships y persistir los datos en SQLite.
-La UI siempre lee desde SQLite como single source of truth.
-Cuando hay conexión: refrescar datos usando una estrategia de versionado (ETag o timestamps) y actualizar los registros locales.
-Opcional: almacenar la fecha del último sync y manejar una política de caché “stale”.
+    En el primer arranque con conexión: consumir /spaceships y persistir los datos en SQLite.
+    La UI siempre lee desde SQLite como single source of truth.
+    Cuando hay conexión: refrescar datos usando una estrategia de versionado (ETag o timestamps) y actualizar los registros locales.
+    Opcional: almacenar la fecha del último sync y manejar una política de caché “stale”.
 
 d. Cuándo elegir Realm en su lugar:
 
-Si el modelo de datos se vuelve altamente anidado.
-Si se requieren consultas reactivas complejas.
-Si la resolución de conflictos offline es más sofisticada y se necesita una DB orientada a objetos.
+    Si el modelo de datos se vuelve altamente anidado.
+    Si se requieren consultas reactivas complejas.
+    Si la resolución de conflictos offline es más sofisticada y se necesita una DB orientada a objetos.
 
 Para un catalogo simple, con filtros por facciones, SQLite es la opción más simple y robusta. Siendo escalable en caso de ser necesario para incluir filtros dinamicos e interacción con el usuario (favoritos, más buscados, etc.)
 
@@ -171,18 +171,18 @@ Apple es conocido por ser estricto con sus aplicaciones, sin embargo tengo exper
 
 a. Agregar funcionalidades que aumenten el valor para el usuario sin inflar el alcance:
 
-Búsqueda (por nombre o palabras clave)
-Favoritos / marcadores persistidos localmente (SQLite)
-Analítica por facción (conteo por facción) y filtros rápidos tipo chips
-Modo offline con indicador de “Última actualización”
-Estados de error y vacíos bien diseñados (skeleton loading)
+    Búsqueda (por nombre o palabras clave)
+    Favoritos / marcadores persistidos localmente (SQLite)
+    Analítica por facción (conteo por facción) y filtros rápidos tipo chips
+    Modo offline con indicador de “Última actualización”
+    Estados de error y vacíos bien diseñados (skeleton loading)
 
 b. Mejorar contenido y engagement:
 
-Pantalla de detalle enriquecida: especificaciones, imágenes, naves relacionadas por facción, etc.
-Adicionalmente: visualizador de modelo 3D de las naves (se puede agregar como contenido adicional descargable, para no inflar el peso de la app base).
-Agregar toggles de accesibilidad (perfil de color, tamaño de letras, modo narración, etc.)
-Crear un onboarding interactivo con elementos gamificados simples.
+    Pantalla de detalle enriquecida: especificaciones, imágenes, naves relacionadas por facción, etc.
+    Adicionalmente: visualizador de modelo 3D de las naves (se puede agregar como contenido adicional descargable, para no inflar el peso de la app base).
+    Agregar toggles de accesibilidad (perfil de color, tamaño de letras, modo narración, etc.)
+    Crear un onboarding interactivo con elementos gamificados simples.
 
 ---
 
@@ -192,4 +192,4 @@ Estas mejoras demuestran funcionalidad real, persistencia de datos y una propues
 Repo Git
 ###
 
-URL: https://github.com/Gagz9k/srn-spaceships
+    URL: https://github.com/Gagz9k/srn-spaceships
